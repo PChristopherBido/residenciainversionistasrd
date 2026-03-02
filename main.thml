@@ -1,286 +1,284 @@
-import React, { useState } from 'react';
-import { 
-  FileText, Globe, MapPin, Clock, CheckCircle, ShieldCheck, 
-  DollarSign, UserCheck, ArrowRight, ChevronRight, 
-  Landmark, Scaling, FileCheck, AlertCircle, Info,
-  Home, Car, Receipt, Gift
-} from 'lucide-react';
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residencia por Inversión RD - Infografía</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.5s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 pb-12">
 
-const App = () => {
-  const [activeTab, setActiveTab] = useState('proceso');
-
-  const docOrigen = [
-    { name: "Pasaporte Original", detail: "Mínimo 6 meses de vigencia" },
-    { name: "Acta de Nacimiento Inextensa", detail: "Apostillada y Traducida" },
-    { name: "Antecedentes Penales", detail: "Apostillados y Traducidos" },
-    { name: "Certificación Bancaria Origen", detail: "Prueba procedencia de fondos" },
-    { name: "Certificado de Matrimonio", detail: "Solo si aplica con cónyuge" }
-  ];
-
-  const docRD = [
-    { name: "Certificado ProDominicana", detail: "Acreditación de Inversionista Directo" },
-    { name: "Exámenes Médicos Oficiales", detail: "En centros autorizados por DGM" },
-    { name: "Póliza de Seguro de Garantía", detail: "Con aseguradora local autorizada" },
-    { name: "Fotos 2x2", detail: "6 frontales y 6 de perfil (fondo blanco)" },
-    { name: "Certificación Bancaria Local", detail: "Cuenta receptora de inversión en RD" }
-  ];
-
-  const fases = [
-    {
-      n: 1,
-      title: "Preparación",
-      desc: "Gestión de documentos en el país de origen.",
-      items: ["Apostillar actas", "Traducir documentos al español", "Certificar solvencia"]
-    },
-    {
-      n: 2,
-      title: "Visado RS",
-      desc: "Solicitud en Consulado Dominicano.",
-      items: ["Trámite consular", "Tiempo: 2-3 semanas", "Vigencia: 60 días"]
-    },
-    {
-      n: 3,
-      title: "Expediente DGM",
-      desc: "Trámite presencial en Santo Domingo.",
-      items: ["Exámenes médicos", "Depósito de expediente", "Captura biométrica"]
-    },
-    {
-      n: 4,
-      title: "Cédula JCE",
-      desc: "Obtención de identidad nacional.",
-      items: ["Emisión de Cédula", "Registro de extranjero", "Derechos plenos"]
-    }
-  ];
-
-  const incentivosFiscales = [
-    {
-      title: "Exención de Mudanza",
-      desc: "100% de exoneración de impuestos sobre ajuares del hogar y bienes personales.",
-      icon: <Home className="text-blue-500" />
-    },
-    {
-      title: "Exoneración de Vehículos",
-      desc: "Exención parcial o total de impuestos para la importación de un vehículo de motor.",
-      icon: <Car className="text-blue-500" />
-    },
-    {
-      title: "Impuestos Inmobiliarios",
-      desc: "Exención del 3% del impuesto de transferencia para la primera propiedad adquirida.",
-      icon: <Landmark className="text-blue-500" />
-    },
-    {
-      title: "Dividendos e Intereses",
-      desc: "Exención del 50% del impuesto sobre dividendos e intereses generados en el país.",
-      icon: <Receipt className="text-blue-500" />
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-900 pb-12">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white p-8 md:p-12 shadow-inner">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white p-8 md:p-12 shadow-inner">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <span className="bg-amber-400 text-blue-900 px-3 py-1 rounded-full text-xs font-black uppercase tracking-widest">Fast Track</span>
-                <span className="bg-white/20 px-3 py-1 rounded-full text-xs font-bold uppercase">Ley 171-07</span>
-              </div>
-              <h1 className="text-4xl md:text-5xl font-black mb-2 tracking-tight uppercase">Inversionista Directo</h1>
-              <p className="text-blue-200 text-xl max-w-2xl font-light">Residencia Permanente en República Dominicana</p>
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="bg-amber-400 text-blue-900 px-3 py-1 rounded-full text-xs font-black uppercase tracking-widest">Fast Track</span>
+                    <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-bold uppercase">Ley 171-07</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-black mb-2 tracking-tight uppercase">Inversionista Directo</h1>
+                <p class="text-blue-200 text-xl max-w-2xl font-light">Residencia Permanente en República Dominicana</p>
             </div>
-            <div className="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/20 w-full md:w-auto text-center">
-              <p className="text-xs uppercase font-bold text-blue-300 mb-1 tracking-wider">Inversión Mínima</p>
-              <p className="text-4xl font-black text-amber-400">200,000 USD</p>
-              <p className="text-xs mt-2 text-white/60 italic font-medium uppercase">Capital Extranjero</p>
+            <div class="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/20 w-full md:w-auto text-center">
+                <p class="text-xs uppercase font-bold text-blue-300 mb-1 tracking-wider">Inversión Mínima</p>
+                <p class="text-4xl font-black text-amber-400">200,000 USD</p>
+                <p class="text-xs mt-2 text-white/60 italic font-medium uppercase tracking-tighter">Capital Extranjero Certificado</p>
             </div>
-          </div>
         </div>
-      </div>
+    </header>
 
-      <div className="max-w-6xl mx-auto -mt-8 px-4">
-        {/* Navigation Tabs */}
-        <div className="flex bg-white rounded-2xl shadow-lg p-2 mb-8 border border-slate-200 overflow-x-auto no-scrollbar">
-          <button onClick={() => setActiveTab('proceso')} className={`flex-1 py-4 px-6 rounded-xl font-bold transition-all flex items-center justify-center gap-2 whitespace-nowrap ${activeTab === 'proceso' ? 'bg-blue-600 text-white shadow-md' : 'text-slate-500 hover:bg-slate-50'}`}>
-            <Scaling size={20} /> Ruta Crítica
-          </button>
-          <button onClick={() => setActiveTab('documentos')} className={`flex-1 py-4 px-6 rounded-xl font-bold transition-all flex items-center justify-center gap-2 whitespace-nowrap ${activeTab === 'documentos' ? 'bg-blue-600 text-white shadow-md' : 'text-slate-500 hover:bg-slate-50'}`}>
-            <FileCheck size={20} /> Documentación
-          </button>
-          <button onClick={() => setActiveTab('beneficios')} className={`flex-1 py-4 px-6 rounded-xl font-bold transition-all flex items-center justify-center gap-2 whitespace-nowrap ${activeTab === 'beneficios' ? 'bg-blue-600 text-white shadow-md' : 'text-slate-500 hover:bg-slate-50'}`}>
-            <UserCheck size={20} /> Ciudadanía y Ventajas
-          </button>
-        </div>
+    <main class="max-w-6xl mx-auto -mt-8 px-4">
+        <!-- Navigation Tabs -->
+        <nav class="flex bg-white rounded-2xl shadow-lg p-2 mb-8 border border-slate-200 overflow-x-auto no-scrollbar">
+            <button onclick="showTab('proceso', this)" class="tab-btn flex-1 py-4 px-6 rounded-xl font-bold transition-all flex items-center justify-center gap-2 whitespace-nowrap bg-blue-600 text-white shadow-md">
+                <i data-lucide="layers" class="w-5 h-5"></i> Ruta Crítica
+            </button>
+            <button onclick="showTab('documentos', this)" class="tab-btn flex-1 py-4 px-6 rounded-xl font-bold transition-all flex items-center justify-center gap-2 whitespace-nowrap text-slate-500 hover:bg-slate-50">
+                <i data-lucide="file-check" class="w-5 h-5"></i> Documentación
+            </button>
+            <button onclick="showTab('beneficios', this)" class="tab-btn flex-1 py-4 px-6 rounded-xl font-bold transition-all flex items-center justify-center gap-2 whitespace-nowrap text-slate-500 hover:bg-slate-50">
+                <i data-lucide="user-check" class="w-5 h-5"></i> Ciudadanía y Ventajas
+            </button>
+        </nav>
 
-        {/* Content Area */}
-        {activeTab === 'proceso' && (
-          <div className="animate-in fade-in duration-500">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {fases.map((fase) => (
-                <div key={fase.n} className="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 hover:border-blue-300 transition-all group">
-                  <div className="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-black mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                    {fase.n}
-                  </div>
-                  <h3 className="font-black text-xl mb-2">{fase.title}</h3>
-                  <p className="text-sm text-slate-500 mb-4 h-12 leading-tight">{fase.desc}</p>
-                  <ul className="space-y-2 border-t pt-4">
-                    {fase.items.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-xs font-semibold text-slate-700">
-                        <CheckCircle size={14} className="text-green-500 mt-0.5 flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+        <!-- Tab: Proceso -->
+        <section id="proceso" class="tab-content active">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Fase 1 -->
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 hover:border-blue-300 transition-all group">
+                    <div class="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-black mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors">1</div>
+                    <h3 class="font-black text-xl mb-2">Preparación</h3>
+                    <p class="text-sm text-slate-500 mb-4 h-12 leading-tight">Gestión de documentos en el país de origen.</p>
+                    <ul class="space-y-2 border-t pt-4">
+                        <li class="flex items-start gap-2 text-xs font-semibold text-slate-700"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Apostillar actas</li>
+                        <li class="flex items-start gap-2 text-xs font-semibold text-slate-700"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Traducir documentos</li>
+                        <li class="flex items-start gap-2 text-xs font-semibold text-slate-700"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Certificar solvencia</li>
+                    </ul>
                 </div>
-              ))}
+                <!-- Fase 2 -->
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 hover:border-blue-300 transition-all group">
+                    <div class="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-black mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors">2</div>
+                    <h3 class="font-black text-xl mb-2">Visado RS</h3>
+                    <p class="text-sm text-slate-500 mb-4 h-12 leading-tight">Solicitud ante el Consulado Dominicano.</p>
+                    <ul class="space-y-2 border-t pt-4">
+                        <li class="flex items-start gap-2 text-xs font-semibold text-slate-700"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Trámite consular</li>
+                        <li class="flex items-start gap-2 text-xs font-semibold text-slate-700"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Tiempo: 2-3 semanas</li>
+                        <li class="flex items-start gap-2 text-xs font-semibold text-slate-700"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Vigencia: 60 días</li>
+                    </ul>
+                </div>
+                <!-- Fase 3 -->
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 hover:border-blue-300 transition-all group">
+                    <div class="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-black mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors">3</div>
+                    <h3 class="font-black text-xl mb-2">Expediente DGM</h3>
+                    <p class="text-sm text-slate-500 mb-4 h-12 leading-tight">Trámite presencial en Santo Domingo.</p>
+                    <ul class="space-y-2 border-t pt-4">
+                        <li class="flex items-start gap-2 text-xs font-semibold text-slate-700"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Exámenes médicos</li>
+                        <li class="flex items-start gap-2 text-xs font-semibold text-slate-700"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Depósito de originales</li>
+                        <li class="flex items-start gap-2 text-xs font-semibold text-slate-700"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Captura biométrica</li>
+                    </ul>
+                </div>
+                <!-- Fase 4 -->
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 hover:border-blue-300 transition-all group">
+                    <div class="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-black mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors">4</div>
+                    <h3 class="font-black text-xl mb-2">Cédula JCE</h3>
+                    <p class="text-sm text-slate-500 mb-4 h-12 leading-tight">Obtención de identidad nacional.</p>
+                    <ul class="space-y-2 border-t pt-4">
+                        <li class="flex items-start gap-2 text-xs font-semibold text-slate-700"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Emisión de Cédula</li>
+                        <li class="flex items-start gap-2 text-xs font-semibold text-slate-700"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Registro de extranjero</li>
+                        <li class="flex items-start gap-2 text-xs font-semibold text-slate-700"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Derechos plenos</li>
+                    </ul>
+                </div>
             </div>
-            
-            <div className="mt-8 bg-blue-900 rounded-3xl p-8 text-white flex flex-col md:flex-row items-center justify-center gap-12">
-              <div className="flex items-center gap-4">
-                <Clock size={48} className="text-blue-400" />
-                <div>
-                  <h4 className="text-2xl font-bold tracking-tight">4 a 6 Meses</h4>
-                  <p className="text-blue-300 opacity-80">Tiempo estimado del proceso completo</p>
-                </div>
-              </div>
-              <div className="h-px w-full md:w-px md:h-12 bg-white/20 hidden md:block"></div>
-              <div className="flex items-center gap-4">
-                <Landmark size={48} className="text-blue-400" />
-                <div>
-                  <h4 className="text-2xl font-bold tracking-tight">Vía Rápida</h4>
-                  <p className="text-blue-300 opacity-80">Residencia Permanente de entrada</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
 
-        {activeTab === 'documentos' && (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 animate-in slide-in-from-bottom-4 duration-500">
-            {/* Origen */}
-            <div className="bg-white rounded-3xl shadow-md overflow-hidden border border-slate-200">
-              <div className="bg-slate-800 p-6 text-white flex items-center gap-3">
-                <Globe size={24} className="text-blue-400" />
-                <h3 className="font-bold text-xl uppercase tracking-tight">Documentos en Origen</h3>
-              </div>
-              <div className="p-6 space-y-4">
-                {docOrigen.map((doc, i) => (
-                  <div key={i} className="flex items-center gap-4 p-4 bg-slate-50 rounded-2xl border border-transparent hover:border-slate-200 transition-all">
-                    <div className="bg-white p-2 rounded-lg shadow-sm text-blue-600"><FileText size={20} /></div>
+            <div class="mt-8 bg-blue-900 rounded-3xl p-8 text-white flex flex-col md:flex-row items-center justify-center gap-12">
+                <div class="flex items-center gap-4 text-center md:text-left">
+                    <i data-lucide="clock" class="w-12 h-12 text-blue-400"></i>
                     <div>
-                      <p className="font-bold text-sm">{doc.name}</p>
-                      <p className="text-xs text-slate-500 italic">{doc.detail}</p>
+                        <h4 class="text-2xl font-bold tracking-tight">4 a 6 Meses</h4>
+                        <p class="text-blue-300 opacity-80">Tiempo estimado del proceso completo</p>
                     </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Local RD */}
-            <div className="bg-white rounded-3xl shadow-md overflow-hidden border border-slate-200">
-              <div className="bg-blue-700 p-6 text-white flex items-center gap-3">
-                <MapPin size={24} className="text-blue-300" />
-                <h3 className="font-bold text-xl uppercase tracking-tight">Documentos en RD</h3>
-              </div>
-              <div className="p-6 space-y-4">
-                {docRD.map((doc, i) => (
-                  <div key={i} className="flex items-center gap-4 p-4 bg-blue-50/50 rounded-2xl border border-transparent hover:border-blue-100 transition-all">
-                    <div className="bg-white p-2 rounded-lg shadow-sm text-blue-700"><CheckCircle size={20} /></div>
+                </div>
+                <div class="h-px w-full md:w-px md:h-12 bg-white/20 hidden md:block"></div>
+                <div class="flex items-center gap-4 text-center md:text-left">
+                    <i data-lucide="zap" class="w-12 h-12 text-amber-400"></i>
                     <div>
-                      <p className="font-bold text-sm">{doc.name}</p>
-                      <p className="text-xs text-slate-500 italic">{doc.detail}</p>
+                        <h4 class="text-2xl font-bold tracking-tight">Vía Rápida</h4>
+                        <p class="text-blue-300 opacity-80">Estatus Permanente desde el primer carnet</p>
                     </div>
-                  </div>
-                ))}
-              </div>
+                </div>
             </div>
-          </div>
-        )}
+        </section>
 
-        {activeTab === 'beneficios' && (
-          <div className="space-y-8 animate-in zoom-in duration-500">
-            {/* Main Benefits Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white p-8 rounded-3xl shadow-md border-l-8 border-blue-600 flex gap-6 items-center">
-                <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                  <ShieldCheck size={32} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-black mb-1">Estatus Permanente</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    Residencia Permanente otorgada desde la primera emisión. Sin escalas provisionales ni renovaciones anuales tediosas.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white p-8 rounded-3xl shadow-md border-l-8 border-amber-500 flex gap-6 items-center">
-                <div className="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center flex-shrink-0">
-                  <UserCheck size={32} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-black mb-1">Ciudadanía Acelerada</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    Solicita naturalización y pasaporte dominicano en solo <span className="font-bold text-amber-600 text-lg">6 meses</span> tras obtener la residencia permanente.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Tax Incentives Grid */}
-            <div className="bg-white rounded-3xl shadow-md border border-slate-200 overflow-hidden">
-              <div className="bg-slate-900 p-6 text-white">
-                <h3 className="text-xl font-black uppercase tracking-widest flex items-center gap-3">
-                  <Receipt className="text-amber-400" /> Incentivos de la Ley 171-07
-                </h3>
-              </div>
-              <div className="p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {incentivosFiscales.map((inc, i) => (
-                  <div key={i} className="flex flex-col items-center text-center">
-                    <div className="mb-4 p-4 bg-slate-50 rounded-2xl border border-slate-100 group-hover:bg-blue-50 transition-colors">
-                      {inc.icon}
+        <!-- Tab: Documentos -->
+        <section id="documentos" class="tab-content">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Origen -->
+                <div class="bg-white rounded-3xl shadow-md overflow-hidden border border-slate-200">
+                    <div class="bg-slate-800 p-6 text-white flex items-center gap-3">
+                        <i data-lucide="globe" class="text-blue-400"></i>
+                        <h3 class="font-bold text-xl uppercase tracking-tight">Documentos en Origen</h3>
                     </div>
-                    <h4 className="font-bold text-sm mb-2 uppercase tracking-tighter">{inc.title}</h4>
-                    <p className="text-xs text-slate-500 leading-normal">{inc.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-2xl border border-transparent hover:border-slate-200 transition-all">
+                            <div class="bg-white p-2 rounded-lg shadow-sm text-blue-600"><i data-lucide="file-text"></i></div>
+                            <div><p class="font-bold text-sm">Pasaporte Original</p><p class="text-xs text-slate-500 italic">Mínimo 6 meses de vigencia</p></div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-2xl border border-transparent hover:border-slate-200 transition-all">
+                            <div class="bg-white p-2 rounded-lg shadow-sm text-blue-600"><i data-lucide="file-text"></i></div>
+                            <div><p class="font-bold text-sm">Acta de Nacimiento Inextensa</p><p class="text-xs text-slate-500 italic">Apostillada y Traducida</p></div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-2xl border border-transparent hover:border-slate-200 transition-all">
+                            <div class="bg-white p-2 rounded-lg shadow-sm text-blue-600"><i data-lucide="file-text"></i></div>
+                            <div><p class="font-bold text-sm">Antecedentes Penales</p><p class="text-xs text-slate-500 italic">Apostillados y Traducidos</p></div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-2xl border border-transparent hover:border-slate-200 transition-all">
+                            <div class="bg-white p-2 rounded-lg shadow-sm text-blue-600"><i data-lucide="file-text"></i></div>
+                            <div><p class="font-bold text-sm">Certificación Bancaria Origen</p><p class="text-xs text-slate-500 italic">Prueba procedencia de fondos</p></div>
+                        </div>
+                    </div>
+                </div>
 
-            {/* Other Benefits List */}
-            <div className="bg-blue-50 p-6 rounded-3xl border border-blue-100">
-              <h4 className="font-bold text-blue-900 mb-4 flex items-center gap-2">
-                <Gift className="text-blue-600" size={20} /> Otros Derechos y Ventajas
-              </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-3">
-                <div className="flex items-center gap-2 text-sm text-blue-800">
-                  <CheckCircle size={16} className="text-blue-600" /> Acceso a Financiamiento Bancario Local
+                <!-- Local RD -->
+                <div class="bg-white rounded-3xl shadow-md overflow-hidden border border-slate-200">
+                    <div class="bg-blue-700 p-6 text-white flex items-center gap-3">
+                        <i data-lucide="map-pin" class="text-blue-300"></i>
+                        <h3 class="font-bold text-xl uppercase tracking-tight">Documentos en RD</h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center gap-4 p-4 bg-blue-50/50 rounded-2xl border border-transparent hover:border-blue-100 transition-all">
+                            <div class="bg-white p-2 rounded-lg shadow-sm text-blue-700"><i data-lucide="check-circle"></i></div>
+                            <div><p class="font-bold text-sm">Certificado ProDominicana</p><p class="text-xs text-slate-500 italic">Acreditación de Inversionista Directo</p></div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-blue-50/50 rounded-2xl border border-transparent hover:border-blue-100 transition-all">
+                            <div class="bg-white p-2 rounded-lg shadow-sm text-blue-700"><i data-lucide="check-circle"></i></div>
+                            <div><p class="font-bold text-sm">Exámenes Médicos Oficiales</p><p class="text-xs text-slate-500 italic">En centros autorizados por DGM</p></div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-blue-50/50 rounded-2xl border border-transparent hover:border-blue-100 transition-all">
+                            <div class="bg-white p-2 rounded-lg shadow-sm text-blue-700"><i data-lucide="check-circle"></i></div>
+                            <div><p class="font-bold text-sm">Póliza de Seguro de Garantía</p><p class="text-xs text-slate-500 italic">Aseguradora local autorizada</p></div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-blue-50/50 rounded-2xl border border-transparent hover:border-blue-100 transition-all">
+                            <div class="bg-white p-2 rounded-lg shadow-sm text-blue-700"><i data-lucide="check-circle"></i></div>
+                            <div><p class="font-bold text-sm">Certificación Bancaria Local</p><p class="text-xs text-slate-500 italic">Cuenta receptora de inversión</p></div>
+                        </div>
+                    </div>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-blue-800">
-                  <CheckCircle size={16} className="text-blue-600" /> Posibilidad de trabajar sin permisos extra
-                </div>
-                <div className="flex items-center gap-2 text-sm text-blue-800">
-                  <CheckCircle size={16} className="text-blue-600" /> Entrada al país sin tarjeta de turista
-                </div>
-                <div className="flex items-center gap-2 text-sm text-blue-800">
-                  <CheckCircle size={16} className="text-blue-600" /> Inversión protegida por leyes internacionales
-                </div>
-              </div>
             </div>
-          </div>
-        )}
-      </div>
+        </section>
 
-      <div className="max-w-6xl mx-auto mt-12 px-4">
-        <div className="bg-slate-100 p-6 rounded-3xl border border-slate-200 flex items-start gap-4">
-          <Info size={24} className="text-blue-500 flex-shrink-0" />
-          <div className="text-xs text-slate-500 leading-relaxed">
-            <p className="font-bold text-slate-800 mb-1 uppercase tracking-wider">Nota Importante:</p>
-            El monto de inversión de 200,000 USD debe ser canalizado y certificado a través de ProDominicana. Los beneficios fiscales mencionados están sujetos a la aplicación correcta de la Ley 171-07 y leyes de incentivo a la inversión extranjera. Esta infografía no constituye asesoría legal formal.
-          </div>
+        <!-- Tab: Beneficios -->
+        <section id="beneficios" class="tab-content">
+            <div class="space-y-8">
+                <!-- Ciudadanía & Status -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-8 rounded-3xl shadow-md border-l-8 border-blue-600 flex gap-6 items-center">
+                        <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="shield-check" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-black mb-1">Estatus Permanente</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">Residencia Permanente otorgada desde la primera emisión. Sin escalas provisionales ni renovaciones anuales.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-md border-l-8 border-amber-500 flex gap-6 items-center">
+                        <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="user-plus" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-black mb-1">Ciudadanía Acelerada</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">Solicita naturalización y pasaporte dominicano en solo <span class="font-bold text-amber-600 text-lg">6 meses</span> tras obtener la residencia permanente.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Incentivos Fiscales Ley 171-07 -->
+                <div class="bg-white rounded-3xl shadow-md border border-slate-200 overflow-hidden">
+                    <div class="bg-slate-900 p-6 text-white">
+                        <h3 class="text-xl font-black uppercase tracking-widest flex items-center gap-3">
+                            <i data-lucide="receipt" class="text-amber-400"></i> Incentivos de la Ley 171-07
+                        </h3>
+                    </div>
+                    <div class="p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="mb-4 p-4 bg-slate-50 rounded-2xl border border-slate-100"><i data-lucide="home" class="text-blue-500"></i></div>
+                            <h4 class="font-bold text-sm mb-2 uppercase">Exención de Mudanza</h4>
+                            <p class="text-xs text-slate-500 leading-normal">100% de exoneración de impuestos sobre bienes personales y ajuares del hogar.</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center">
+                            <div class="mb-4 p-4 bg-slate-50 rounded-2xl border border-slate-100"><i data-lucide="car" class="text-blue-500"></i></div>
+                            <h4 class="font-bold text-sm mb-2 uppercase">Exoneración Vehículos</h4>
+                            <p class="text-xs text-slate-500 leading-normal">Exención de impuestos para la importación de un vehículo de motor.</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center">
+                            <div class="mb-4 p-4 bg-slate-50 rounded-2xl border border-slate-100"><i data-lucide="landmark" class="text-blue-500"></i></div>
+                            <h4 class="font-bold text-sm mb-2 uppercase">Transferencia Inmuebles</h4>
+                            <p class="text-xs text-slate-500 leading-normal">Exención del 3% del impuesto de transferencia para la primera propiedad.</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center">
+                            <div class="mb-4 p-4 bg-slate-50 rounded-2xl border border-slate-100"><i data-lucide="trending-up" class="text-blue-500"></i></div>
+                            <h4 class="font-bold text-sm mb-2 uppercase">Rentas Externas</h4>
+                            <p class="text-xs text-slate-500 leading-normal">Exención del 50% de impuestos sobre dividendos e intereses generados en el país.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Extra Benefits -->
+                <div class="bg-blue-50 p-6 rounded-3xl border border-blue-100">
+                    <h4 class="font-bold text-blue-900 mb-4 flex items-center gap-2">
+                        <i data-lucide="gift" class="text-blue-600"></i> Otros Derechos y Ventajas
+                    </h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-3">
+                        <div class="flex items-center gap-2 text-sm text-blue-800"><i data-lucide="check" class="text-blue-600 w-4"></i> Acceso a Financiamiento Bancario Local</div>
+                        <div class="flex items-center gap-2 text-sm text-blue-800"><i data-lucide="check" class="text-blue-600 w-4"></i> Posibilidad de trabajar sin permisos extra</div>
+                        <div class="flex items-center gap-2 text-sm text-blue-800"><i data-lucide="check" class="text-blue-600 w-4"></i> Entrada al país sin tarjeta de turista</div>
+                        <div class="flex items-center gap-2 text-sm text-blue-800"><i data-lucide="check" class="text-blue-600 w-4"></i> Inversión protegida por leyes internacionales</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="max-w-6xl mx-auto mt-12 px-4">
+        <div class="bg-slate-100 p-6 rounded-3xl border border-slate-200 flex items-start gap-4">
+            <i data-lucide="info" class="text-blue-500 flex-shrink-0"></i>
+            <div class="text-xs text-slate-500 leading-relaxed">
+                <p class="font-bold text-slate-800 mb-1 uppercase tracking-wider">Nota Importante:</p>
+                El monto de inversión de 200,000 USD debe ser canalizado y certificado a través de ProDominicana. Los beneficios fiscales mencionados están sujetos a la aplicación correcta de la Ley 171-07 y leyes de incentivo a la inversión extranjera. Esta infografía no constituye asesoría legal formal.
+            </div>
         </div>
-      </div>
-    </div>
-  );
-};
+    </footer>
 
-export default App;
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Tab Navigation Logic
+        function showTab(tabId, btn) {
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            // Show selected content
+            document.getElementById(tabId).classList.add('active');
+
+            // Reset buttons
+            document.querySelectorAll('.tab-btn').forEach(button => {
+                button.classList.remove('bg-blue-600', 'text-white', 'shadow-md');
+                button.classList.add('text-slate-500', 'hover:bg-slate-50');
+            });
+            // Style active button
+            btn.classList.add('bg-blue-600', 'text-white', 'shadow-md');
+            btn.classList.remove('text-slate-500', 'hover:bg-slate-50');
+        }
+    </script>
+</body>
+</html>
